@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct PortfolioTrackerApp1App: App {
+    @AppStorage("darkModeEnabled") private var darkModeEnabled = false
+
     var body: some Scene {
         WindowGroup {
             ContentView()

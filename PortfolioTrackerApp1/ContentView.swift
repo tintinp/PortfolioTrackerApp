@@ -9,18 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            
-            Button("Press Me") {
-                print("Debug: Button was pressed!")
-            }
-            .padding()
+        TabView {
+            // Swapped the order of these two TabItems
+            LedgerView()
+                .tabItem {
+                    Image(systemName: "list.bullet")
+                    Text("Ledger")
+                }
+            PortfolioOverviewView()
+                .tabItem {
+                    Image(systemName: "chart.pie.fill")
+                    Text("Portfolio")
+                }
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
         }
-        .padding()
     }
 }
 
